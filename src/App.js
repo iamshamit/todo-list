@@ -53,7 +53,7 @@ function App() {
 
         <Routes>
           <Route
-            exact path="/"
+            exact path="todo-list/"
             element={
               <>
                 <AddTodo addTodo={addTodo} />
@@ -62,7 +62,7 @@ function App() {
             }
           />
 
-          <Route path="/about" element={<About />} />
+          <Route path="todo-list/about" element={<About />} />
         </Routes>
 
         <Foomter />
