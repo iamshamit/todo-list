@@ -1,4 +1,3 @@
-import "./App.css";
 import Header from "./myComponents/header";
 import Todos from "./myComponents/todos";
 import Foomter from "./myComponents/foomter";
@@ -47,7 +46,7 @@ function App() {
   }, [todos]);
 
   return (
-    <>
+    <div className="colors">
       <Router>
         <Header title="TodoListX" searchBar={false} />
 
@@ -67,7 +66,7 @@ function App() {
 
         <Foomter />
       </Router>
-    </>
+    </div>
   );
 }
 

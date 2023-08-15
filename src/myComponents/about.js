@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className='container'>
+    <div className='container py-3'>
       <h1>Introduction</h1>
 
       <p>TodoListX is a straightforward and efficient todo list web application built using the React framework and React Router. It provides users with a simple yet effective solution for managing their tasks without the need for login or complex features. Leveraging the power of local storage, TodoListX allows users to create, view, and organize their todo tasks effortlessly, making it the perfect choice for quick and hassle-free task management.</p>
