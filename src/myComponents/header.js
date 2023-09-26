@@ -5,8 +5,16 @@ import { useState, useEffect } from "react";
 import './Switch.css';
 
 export default function Header(procs) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    let savedDarkMode = JSON.parse(localStorage.getItem('isDarkMode'));
+    return savedDarkMode !== null ? savedDarkMode : false;
+  });
+  
+  const [isChecked, setIsChecked] = useState(() => {
+    let savedChecked = JSON.parse(localStorage.getItem('isChecked'));
+    return savedChecked !== null ? savedChecked : false;
+  });
 
   useEffect(() => {
     // Apply the chosen theme when the component mounts and when the theme changes
@@ -17,7 +25,12 @@ export default function Header(procs) {
       document.body.classList.remove("dark-theme");
       document.body.classList.add("light-theme");
     }
+    localStorage.setItem('isDarkMode', JSON.stringify(isDarkMode));
   }, [isDarkMode]);
+
+  useEffect(() => {
+    localStorage.setItem('isChecked', JSON.stringify(isChecked));
+  }, [isChecked]);
 
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
@@ -58,7 +71,8 @@ export default function Header(procs) {
               </Link>
             </li>
           </ul>
-          <label className="switch">
+          <label for="switch" className="fs-6 text-black">Theme</label>
+          <label className="switch mx-2">
             <input
               type="checkbox"
               checked={isChecked}
@@ -78,9 +92,7 @@ export default function Header(procs) {
                 Search
               </button>
             </form>
-          ) : (
-            ""
-          )}
+          ) : ("")}
         </div>
       </div>
     </nav>
