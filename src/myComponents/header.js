@@ -17,7 +17,6 @@ export default function Header(procs) {
   });
 
   useEffect(() => {
-    // Apply the chosen theme when the component mounts and when the theme changes
     if (isDarkMode) {
       document.body.classList.add("dark-theme");
       document.body.classList.remove("light-theme");

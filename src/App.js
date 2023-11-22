@@ -31,10 +31,13 @@ function App() {
     } else {
       sno = todos[todos.length - 1].sno + 1;
     }
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.toLocaleDateString()} ${currentDate.toLocaleTimeString()}`;
     const myTodo = {
       sno: sno,
       title: title,
       desc: desc,
+      createdAt: formattedDate,
     };
     setTodos([...todos, myTodo]);
     console.log(myTodo);
@@ -56,7 +59,7 @@ function App() {
             element={
               <>
                 <AddTodo addTodo={addTodo} />
-                <Todos todos={todos} onDelete={onDelete} />
+                <Todos todos={todos} onDelete={onDelete}/>
               </>
             }
           />
