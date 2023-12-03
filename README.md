@@ -23,4 +23,4 @@ TodoListX is a straightforward and efficient todo list web application built usi
   If a task becomes unnecessary or completed, users can easily remove it from the list with a single click.
 
 ### Responsive Design
-        The application is designed with a responsive layout, ensuring optimal viewing and functionality across various devices, including desktops, tablets, and smartphones.
+  The application is designed with a responsive layout, ensuring optimal viewing and functionality across various devices, including desktops, tablets, and smartphones.
