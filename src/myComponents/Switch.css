@@ -59,3 +59,7 @@
 .color {
   background-color: #55ccff !important;
 }
+
+.ms-auto {
+  margin-left: auto;
+}

@@ -14,19 +14,21 @@ function TodoItems({ todo, onDelete }) {
   };
 
   return (
-    <div className='container my-5 border border-primary p-3 rounded'>
-      <div>
-        <input
-          type="checkbox"
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-          className="form-check-input mb-3"
-        />
+    <div className='container my-5 ms-auto border border-primary p-3 rounded'>
+      <div className='mx-4'>
+        <div>
+          <input
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+            className="form-check-input mb-3"
+          />
+        </div>
+        <p style={{ fontSize: '14px', textDecoration: isChecked ? 'line-through' : 'none' }}>{todo.createdAt}</p>
+        <h4 className='my-3' style={{ textDecoration: isChecked ? 'line-through' : 'none' }}>{todo.title}</h4>
+        <p className='my-3' style={{ textDecoration: isChecked ? 'line-through' : 'none' }}>{todo.desc}</p>
+        <button className="btn btn-sm btn-danger my-2" onClick={() => { onDelete(todo) }}>Delete</button>
       </div>
-      <p style={{ fontSize: '14px', textDecoration: isChecked ? 'line-through' : 'none' }}>{todo.createdAt}</p>
-      <h4 className='my-3' style={{ textDecoration: isChecked ? 'line-through' : 'none' }}>{todo.title}</h4>
-      <p className='my-3' style={{ textDecoration: isChecked ? 'line-through' : 'none' }}>{todo.desc}</p>
-      <button className="btn btn-sm btn-danger my-2" onClick={() => { onDelete(todo) }}>Delete</button>
     </div>
   );
 }
